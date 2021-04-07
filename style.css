@@ -1,0 +1,204 @@
+/* Allgemeine Einstellungen */
+/* Einstellen der Box-sizing Einstellung eintragen */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+@media print {
+  .hire-me,
+  .nav-link {
+    display: none;
+  }
+}
+
+/* First breakpoint responsive design */
+@media screen and (min-width: 786px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Second breakpoint responsive design */
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+*::selection {
+  background-color: lemonchiffon;
+}
+
+/* Einstellen des Stylings für besonders angesprochene Bereiche */
+
+.header {
+  padding: 3rem 1rem;
+  padding-top: 5rem;
+  text-align: center;
+  background-color: lightgoldenrodyellow;
+  position: relative;
+}
+
+.heading-group {
+  font-size: 4rem;
+}
+.main-heading {
+  font-size: 1em;
+}
+
+/* emoji after sub-heading */
+.profession::after {
+  content: "🚀";
+}
+
+/* Schriftgröße relativ zum Elternelement main-heading */
+.profession {
+  font-size: 0.25em;
+}
+
+/* Button "Hire Me" Eisntellungen */
+.hire-me {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background: limegreen;
+  color: black;
+  font-family: monospace;
+}
+
+/* use fixed position for the "hire me" nadge beginning with large breakpoint */
+@media screen and (min-width: 992px) {
+  .hire-me {
+    position: fixed;
+  }
+}
+
+/* hide hire me badge and navigation for printers */
+@media print {
+  .hire-me {
+    display: none;
+  }
+
+  .navigation {
+    display: none;
+  }
+}
+
+/* Task Pseudo classes and combinators */
+
+.nav-link {
+  padding: 0.25rem 0.5rem;
+  color: black;
+}
+
+/* add specific color for the hover state*/
+.nav-link:hover {
+  color: black;
+  background-color: gold;
+}
+
+/* add specific color for the active state*/
+.nav-link:active {
+  color: lemonchiffon;
+  background-color: pink;
+}
+
+/* add spacing between the navigation links*/
+.nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.main > * + * {
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .main > * + * {
+    margin-top: 5rem;
+  }
+}
+
+/* add a border line between articles */
+.main > * {
+  border-top: 0.125rem solid palevioletred;
+  padding: 0 1rem;
+}
+
+.main {
+  padding: 1rem;
+  max-width: 60ch; /* ch wert hier einsetzen */
+  margin: 0 auto; /* das element rutscht dadurch automatisch in die Mitte */
+}
+
+main > article + article {
+  margin-top: 5rem;
+}
+
+/* add spacing between the different areas of your main content */
+.main > * + * {
+  margin-top: 3rem;
+}
+
+.main > *:first-child {
+  border-top: none;
+}
+
+/* change the selection style of the document */
+*::selection {
+  background-color: pink;
+}
+
+.article-heading {
+  position: relative;
+  left: -1rem;
+}
+
+.experience-heading {
+  display: inline-block;
+}
+
+.experience-subheading {
+  display: inline-block;
+}
+
+/* 
+*
+*
+*
+* Ab hier coding aus der Lecture
+*/
+
+/* starts with */
+[href^="mailto"] {
+  color: limegreen;
+}
+/* starts with */
+[href^="tel"] {
+  color: limegreen;
+}
+
+[href^="https"] {
+  color: limegreen;
+}
