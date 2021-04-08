@@ -36,6 +36,16 @@ body {
   margin: 0;
 }
 
+/* variablen setzen für colors im markup */
+body {
+  --background-color: white;
+  --text-color: black;
+  --primary-color: lightgoldenrodyellow;
+  --secondary-color: palevioletred;
+  --accent-color: limegreen;
+  --gradient-color: white;
+}
+
 h1,
 h2,
 h3,
@@ -46,7 +56,7 @@ h6 {
 }
 
 *::selection {
-  background-color: lemonchiffon;
+  background-color: var(--accent-color);
 }
 
 /* Einstellen des Stylings für besonders angesprochene Bereiche */
@@ -55,7 +65,10 @@ h6 {
   padding: 3rem 1rem;
   padding-top: 5rem;
   text-align: center;
-  background-image: linear-gradient(lightgoldenrodyellow, white);
+  background-image: linear-gradient(
+    var(--primary-color),
+    var(--gradient-color)
+  );
   position: relative;
 }
 
@@ -83,8 +96,8 @@ h6 {
   top: 1rem;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  background: limegreen;
-  color: black;
+  background: var(--accent-color);
+  color: var(--text-color);
   font-family: monospace;
 }
 
@@ -124,19 +137,19 @@ h6 {
 /* Task Pseudo classes and combinators */
 .nav-link {
   padding: 0.25rem 0.5rem;
-  color: black;
+  color: var(--text-color);
 }
 
 /* add specific color for the hover state*/
 .nav-link:hover {
   color: black;
-  background-color: gold;
+  background-color: var(--primary-color);
 }
 
 /* add specific color for the active state*/
 .nav-link:active {
-  color: lemonchiffon;
-  background-color: pink;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 /* add spacing between the navigation links*/
@@ -156,7 +169,7 @@ h6 {
 
 /* add a border line between articles */
 .main > * {
-  border-top: 0.125rem solid palevioletred;
+  border-top: 0.125rem solid var(--secondary-color);
   padding: 0 1rem;
 }
 
@@ -181,7 +194,7 @@ main > article + article {
 
 /* change the selection style of the document */
 *::selection {
-  background-color: pink;
+  background-color: var(--secondary-color);
 }
 
 .article-heading {
@@ -215,7 +228,10 @@ main > article + article {
 .footer {
   padding: 1rem;
   margin-top: 5rem;
-  background-image: linear-gradient(lemonchiffon, white);
+  background-image: linear-gradient(
+    var(--primary-color),
+    var(--gradient-color)
+  );
 }
 
 .footer-text {
@@ -230,13 +246,13 @@ main > article + article {
 
 /* starts with */
 [href^="mailto"] {
-  color: limegreen;
+  color: var(--accent-color);
 }
 /* starts with */
 [href^="tel"] {
-  color: limegreen;
+  color: var(--accent-color);
 }
-
+/* starts with */
 [href^="https"] {
-  color: limegreen;
+  color: var(--accent-color);
 }
