@@ -138,6 +138,7 @@ h6 {
 .nav-link {
   padding: 0.25rem 0.5rem;
   color: var(--text-color);
+  transition: background-color 0.5s ease-in-out;
 }
 
 /* add specific color for the hover state*/
@@ -150,6 +151,12 @@ h6 {
 .nav-link:active {
   color: var(--primary-color);
   background-color: var(--secondary-color);
+}
+
+/* add pseudo class for focus state */
+.nav-link:focus {
+  background-color: var(--primary-color);
+  outline-color: var(--secondary-color);
 }
 
 /* add spacing between the navigation links*/
