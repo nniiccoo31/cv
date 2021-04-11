@@ -1,4 +1,7 @@
-/* Allgemeine Einstellungen */
+/* ALLGEMEINE EINSTELLUNGEN 
+*
+*
+*/
 /* Einstellen der Box-sizing Einstellung eintragen */
 *,
 *::before,
@@ -6,11 +9,13 @@
   box-sizing: border-box;
 }
 
+/* set font family for the whole html */
 html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
 }
 
+/* hide hire me badge and navigation links when printing */
 @media print {
   .hire-me,
   .nav-link {
@@ -32,10 +37,6 @@ html {
   }
 }
 
-body {
-  margin: 0;
-}
-
 /* variablen setzen für colors im markup */
 body {
   --background-color: white;
@@ -44,8 +45,13 @@ body {
   --secondary-color: palevioletred;
   --accent-color: limegreen;
   --gradient-color: white;
+
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
+/* set font family for headlines */
 h1,
 h2,
 h3,
@@ -55,12 +61,26 @@ h6 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+/* set background color when any text is selected */
 *::selection {
   background-color: var(--accent-color);
 }
 
-/* Einstellen des Stylings für besonders angesprochene Bereiche */
+/* set text color for navigation links for different activities */
+a,
+a:link,
+a:hover,
+a:visited,
+a:active {
+  color: var(--text-color);
+}
 
+/* SPEZIELLE STYLINGS 
+*
+* 
+*/
+
+/* styling for header element */
 .header {
   padding: 3rem 1rem;
   padding-top: 5rem;
@@ -99,23 +119,20 @@ h6 {
   background: var(--accent-color);
   color: var(--text-color);
   font-family: monospace;
+  transform-origin: top right;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* transformation of hire me badge when hovering over header */
+.header:hover .hire-me,
+.header:focus-within .hire-me {
+  transform: scale(1.25);
 }
 
 /* use fixed position for the "hire me" nadge beginning with large breakpoint */
 @media screen and (min-width: 992px) {
   .hire-me {
     position: fixed;
-  }
-}
-
-/* hide hire me badge and navigation for printers */
-@media print {
-  .hire-me {
-    display: none;
-  }
-
-  .navigation {
-    display: none;
   }
 }
 
@@ -134,20 +151,20 @@ h6 {
   }
 }
 
-/* Task Pseudo classes and combinators */
+/* Task Pseudo classes and combinators with transition for navigation links */
 .nav-link {
   padding: 0.25rem 0.5rem;
   color: var(--text-color);
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
 }
 
-/* add specific color for the hover state*/
+/* add specific color for the hover state on navigation links */
 .nav-link:hover {
-  color: black;
+  color: var(--text-color);
   background-color: var(--primary-color);
 }
 
-/* add specific color for the active state*/
+/* add specific color for the active state */
 .nav-link:active {
   color: var(--primary-color);
   background-color: var(--secondary-color);
